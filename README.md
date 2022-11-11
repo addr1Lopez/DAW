@@ -10,5 +10,5 @@ Este repositorio incluye actividades llevadas a cabo en el módulo DAW
 ## Tema 1 - SERVIDORES WEB
 |Ejercicios|Descripción|
 |----------|-----------|
-|[Ejercicio 1](Ejercicio1.md)|Ejercicio scripts|
+|[Ejercicio 1](Tema1/)|Ejercicio scripts|
 
