@@ -193,7 +193,7 @@ Descomprimimos el archivo:
 
 ![foto](Imágenes/20.png)
 
-Crea el archivo .htaccess:
+Creamos el archivo .htaccess:
 
 ```touch /tmp/wordpress/.htaccess```
 
@@ -220,7 +220,9 @@ Copiamos la aplicación wordpress a la carpeta web para el proyecto:
 Cambia los permisos de la carpeta web:
 
 ```sudo chown -R www-data:www-data /var/www/html/centro_intranet```
+
 ```sudo find /var/www/html/base/ -type d -exec chmod 750 {} \;```
+
 ```sudo find /var/www/html/base/ -type f -exec chmod 640 {} \;```
 
 ![foto](Imágenes/25.png)
@@ -229,10 +231,32 @@ Cambia los permisos de la carpeta web:
 
 ![foto](Imágenes/27.png)
 
-aaa
+Consigue los código para securizar tu instalación:
+
+```curl -s https://api.wordpress.org/secret-key/1.1/salt/```
 
 ![foto](Imágenes/28.png)
 
+Editar el fichero de configuración de WordPress y añadimos los códigos, además del nombre, usuario y contraseña de la base de datos:
 
+```sudo nano /var/www/html/centro_intranet/wp-config.php```
 
+![foto](Imágenes/29.png)
 
+![foto](Imágenes/30.png)
+
+![foto](Imágenes/31.png)
+
+Comprobamos si todo ha funcionado entrando en el dominio correspondiente para wordpress en el navegador:
+
+![foto](Imágenes/32.png)
+
+Una vez que funcione wordpress, nos registramos:
+
+![foto](Imágenes/33.png)
+
+Una vez registrados correctamente nos aparecerá el panel principal de wordpress:
+
+![foto](Imágenes/34.png)
+
+![foto](Imágenes/35.png)
