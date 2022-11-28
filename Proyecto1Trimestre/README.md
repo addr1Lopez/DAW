@@ -283,17 +283,35 @@ Ahora, reiniciamos Apache para reflejar los cambios:
 
 Creamos un archivo de configuración para el dominio del que queramos ver las estadísticas:
 
+```sudo cp /etc/awstats/awstats.conf /etc/awstats/awstats.test.com.conf```
+
 ![foto](Imágenes/42.png)
 
 Editamos el fichero de configuración:
 
 ```sudo nano /etc/awstats/awstats.centro.intranet.conf```
 
+Cambiamos el "SiteDomain" a "centro.intranet":
+
 ![foto](Imágenes/43.png)
+
+Para crear las estadísticas iniciales, ejecutamos el siguiente comando:
+
+```sudo /usr/lib/cgi-bin/awstats.pl -config=centro.intranet -update```
 
 ![foto](Imágenes/44.png)
 
+A continuación, configuramos Apache2 para que muestre estas estadísticas. Copiamos el contenido de la carpeta «cgi-bin» en el directorio raíz del documento por defecto de su instalación de Apache. Por defecto se encuentra en la carpeta «/usr/lib/cgi-bin».
+
+```sudo cp -r /usr/lib/cgi-bin /var/www/html/```
+```sudo chown www-data:www-data /var/www/html/cgi-bin/```
+```sudo chmod -R 755 /var/www/html/cgi-bin/```
+
 ![foto](Imágenes/45.png)
+
+Accedemos a mi AWStats poniendo lo siguiente en la url del navegador:
+
+http://centro.intranet/cgi-bin/awstats.pl?config=centro.intranet.com
 
 ![foto](Imágenes/46.png)
 
