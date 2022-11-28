@@ -137,3 +137,44 @@ Y, finalmente, ingresamos con el usuario que hemos creado anteriormente:
 
 ## Creación de la base de datos y usuario
 
+Creamos la base de datos, la cual llamaremos "wordpress", con la siguiente línea de comandos dentro de MySQL:
+
+```CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;```
+
+![foto](Imágenes/13.png)
+
+Creamos también el usuario:
+
+```CREATE USER 'usuario'@'%' IDENTIFIED WITH mysql_native_password BY 'contraseña';```
+
+![foto](Imágenes/14.png)
+
+Le damos los permisos necesarios sobre la base de datos al usuario:
+
+```GRANT ALL ON wordpress.* TO 'usuario'@'%';```
+
+![foto](Imágenes/15.png)
+
+Solicitamos a MySQL que vuelva a leer la tabla de privilegios, ya que, acabamos de cambiar los permisos:
+
+```FLUSH PRIVILEGES;```
+
+![foto](Imágenes/16.png)
+
+## Instalamos las extensiones de php adicionales:
+
+Para ello utilizaremos el siguiente comando:
+
+```sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip```
+
+![foto](Imágenes/17.png)
+
+También necesitaremos instalar "curl" para descargar aplicaciones:
+
+Para ello, accedemos al directorio "/tmp" donde instalaremos "curl":
+
+```cd /tmp```
+
+Instalamos "curl" con el siguiente comando:
+
+```sudo apt install curl```
