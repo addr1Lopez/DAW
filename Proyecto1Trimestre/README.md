@@ -31,6 +31,8 @@ Ejecutamos el siguiente comando para comprobar que se ha instalado correctamente
 
 Instalamos los paquetes de libapache2-mod-php y php-mysql:
 
+```sudo apt install libapache2-mod-php php-mysql```
+
 ![foto](Imágenes/6.png)
 
 Con el siguiente comando podemos comprobar la versión de php que hemos instalado:
@@ -93,6 +95,12 @@ Editaremos el fichero /etc/apache2/sites-enabled/000-default.conf y añadiremos 
 
 ![foto](Imágenes/python2.png)
 
+# Activación del módulo WSGI
+
+```sudo apt install libapache2-mod-wsgi-py3 -y```
+
+![foto](Imágenes/39.png)
+
 Reiniciamos el servicio de apache
 
 ```sudo systemctl restart apache2```
@@ -127,5 +135,5 @@ Y, finalmente, ingresamos con el usuario que hemos creado anteriormente:
 
 ![foto](Imágenes/python6.png)
 
-
+## Creación de la base de datos y usuario
 
