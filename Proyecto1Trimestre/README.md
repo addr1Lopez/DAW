@@ -62,3 +62,35 @@ Editamos el fichero de configuración de apache del dominio centro.intranet:
 ```sudo nano /etc/apache2/sites-available/centro.intranet.conf``` 
 
 ![foto](Imágenes/10.png)
+
+Habilitamos el sitio con el siguiente comando:
+
+```sudo a2ensite centro.intranet```
+
+## Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
+
+Para empezar, tenemos que instalar python en nuestro sistema:
+
+```sudo apt install python3 libexpat1 -y```
+
+Después de instalarlo, crearemos un fichero de python que ejecutaremos más adelante:
+
+```sudo nano /var/www/html/ficheropython.py```
+
+![foto](Imágenes/python1.png)
+
+Cambiaremos los propietarios del fichero de python para que el usuario "www-data" y el grupo "www-data" tengan acceso a él y así poder ejecutarlo en nuestro servidor web:
+
+```sudo chown www-data:www-data /var/www/html/ficheropython.py```
+
+Cambiaremos también los permisos para que el usuario propietario tenga todos los permisos (de ahí el primer 7 del parámetro de chmod), para que el grupo propietario tenga todos los permisos (de ahí el segundo 7 del parámetro de chmod), y, por último, para que otros tengan permisos de lectura y ejecución, pero no de escritura (de ahí el 5 en el parámetro de chmod):
+
+```sudo chmod 775 /var/www/html/ficheropython.py```
+
+Editaremos el fichero /etc/apache2/sites-enabled/000-default.conf y añadiremos la siguiente línea marcada en la imagen para ejecutar ficheros python en la ruta /wsgi:
+
+```sudo nano /etc/apache2/sites-enabled/000-default.conf```
+
+![foto](Imágenes/python2.png)
+
+
