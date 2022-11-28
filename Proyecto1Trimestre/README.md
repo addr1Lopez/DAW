@@ -106,15 +106,26 @@ Para ello, primero instalaremos el siguiente paquete de apache2:
 ```sudo apt-get install apache2-utils```
 
 Creamos un nuevo usuario, en este caso "adri", y almacenamos la contraseña en el fichero "httpasswd"
+
 ```htpasswd -c /etc/apache2/.htpasswd adri```
 
-Nos pedirá una contraseña de autenticación
+Nos pedirá una contraseña de autenticación:
 
 ![foto](Imágenes/python8.png)
 
+Añadiremos las estas líneas dentro del siguiente fichero de configuración:
 
-
-
+```sudo nano /etc/apache2/sites-enabled/000-default.conf```
 
 ![foto](Imágenes/python4.png)
+
+Comprobaremos que podemos acceder al dominio "departamentos.centro.intranet", donde ejecutaremos la aplicación de python:
+
+![foto](Imágenes/python5.png)
+
+Y, finalmente, ingresamos con el usuario que hemos creado anteriormente:
+
+![foto](Imágenes/python6.png)
+
+
 
