@@ -135,7 +135,9 @@ Y, finalmente, ingresamos con el usuario que hemos creado anteriormente:
 
 ![foto](Imágenes/python6.png)
 
-## Creación de la base de datos y usuario
+## Instalación de WORDPRESS
+
+### Creación de la base de datos y usuario
 
 Creamos la base de datos, la cual llamaremos "wordpress", con la siguiente línea de comandos dentro de MySQL:
 
@@ -178,3 +180,15 @@ Para ello, accedemos al directorio "/tmp" donde instalaremos "curl":
 Instalamos "curl" con el siguiente comando:
 
 ```sudo apt install curl```
+
+Descargamos wordpress con el comando:
+
+```curl -O https://wordpress.org/lastest.tar.gz```
+
+![foto](Imágenes/19.png)
+
+Descomprimimos el archivo:
+
+```tar xzvf lastest.tar.gz```
+
+![foto](Imágenes/20.png)
