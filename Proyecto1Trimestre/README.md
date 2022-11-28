@@ -192,3 +192,47 @@ Descomprimimos el archivo:
 ```tar xzvf lastest.tar.gz```
 
 ![foto](Imágenes/20.png)
+
+Crea el archivo .htaccess:
+
+```touch /tmp/wordpress/.htaccess```
+
+![foto](Imágenes/21.png)
+
+Copiamos la plantilla de configuración al fichero config.php:
+
+```cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php```
+
+![foto](Imágenes/22.png)
+
+Creamos el directorio para actualizaciones de wordpress:
+
+```mkdir /tmp/wordpress/wp-content/upgrade```
+
+![foto](Imágenes/23.png)
+
+Copiamos la aplicación wordpress a la carpeta web para el proyecto:
+
+```sudo cp -a /tmp/wordpress/. /var/www/html/centro_intranet```
+
+![foto](Imágenes/24.png)
+
+Cambia los permisos de la carpeta web:
+
+```sudo chown -R www-data:www-data /var/www/html/centro_intranet```
+```sudo find /var/www/html/base/ -type d -exec chmod 750 {} \;```
+```sudo find /var/www/html/base/ -type f -exec chmod 640 {} \;```
+
+![foto](Imágenes/25.png)
+
+![foto](Imágenes/26.png)
+
+![foto](Imágenes/27.png)
+
+aaa
+
+![foto](Imágenes/28.png)
+
+
+
+
