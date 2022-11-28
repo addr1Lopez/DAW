@@ -260,3 +260,42 @@ Una vez registrados correctamente nos aparecerá el panel principal de wordpress
 ![foto](Imágenes/34.png)
 
 ![foto](Imágenes/35.png)
+ 
+## Instalación y configuración de AWSTATS
+
+Para instalarlo ejecutamos el siguiente comando:
+
+```sudo apt-get install awstats```
+
+![foto](Imágenes/40.png)
+
+A continuación, habrá que habilitar el módulo CGI en Apache.
+
+```sudo a2enmod cgi```
+
+![foto](Imágenes/41.png)
+
+Ahora, reiniciamos Apache para reflejar los cambios:
+
+```sudo /etc/init.d/apache2 restart```
+
+# Configuración AWSTATS
+
+Creamos un archivo de configuración para el dominio del que queramos ver las estadísticas:
+
+![foto](Imágenes/42.png)
+
+Editamos el fichero de configuración:
+
+```sudo nano /etc/awstats/awstats.centro.intranet.conf```
+
+![foto](Imágenes/43.png)
+
+![foto](Imágenes/44.png)
+
+![foto](Imágenes/45.png)
+
+![foto](Imágenes/46.png)
+
+
+
