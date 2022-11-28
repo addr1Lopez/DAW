@@ -279,7 +279,7 @@ Ahora, reiniciamos Apache para reflejar los cambios:
 
 ```sudo /etc/init.d/apache2 restart```
 
-## Configuración AWSTATS
+# Configuración AWSTATS
 
 Creamos un archivo de configuración para el dominio del que queramos ver las estadísticas:
 
@@ -317,9 +317,9 @@ http://centro.intranet/cgi-bin/awstats.pl?config=centro.intranet.com
 
 ![foto](Imágenes/46.png)
 
-# Configuramos Cron para actualizar los registros de awstats
+## Configuramos Cron para actualizar los registros de AWSTATS
 
-Editamos el fichero /etc/crontab
+Editamos el fichero "/etc/crontab"
 
 Añadimos la siguiente línea que le dice a AWStats que actualice cada diez minutos:
 
