@@ -279,7 +279,7 @@ Ahora, reiniciamos Apache para reflejar los cambios:
 
 ```sudo /etc/init.d/apache2 restart```
 
-# Configuración AWSTATS
+## Configuración AWSTATS
 
 Creamos un archivo de configuración para el dominio del que queramos ver las estadísticas:
 
