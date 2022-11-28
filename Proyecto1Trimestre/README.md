@@ -93,4 +93,8 @@ Editaremos el fichero /etc/apache2/sites-enabled/000-default.conf y añadiremos 
 
 ![foto](Imágenes/python2.png)
 
+Reiniciamos el servicio de apache
 
+```sudo systemctl restart apache2```
+
+![foto](Imágenes/python3.png)
