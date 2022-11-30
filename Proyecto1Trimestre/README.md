@@ -373,7 +373,7 @@ Una vez hecho esto, crearemos un directorio, que en este caso llamaremos "downlo
 
 ![foto](Imágenes/55.png)
 
-![foto](Imágenes/55.png)
+![foto](Imágenes/56.png)
 
 
 
