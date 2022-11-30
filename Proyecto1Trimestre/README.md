@@ -327,5 +327,44 @@ Añadimos la siguiente línea que le dice a AWStats que actualice cada diez minu
 
 ![foto](Imágenes/47.png)
 
+## Instalación de un segundo servidor con “nginx” bajo el dominio “servidor2.centro.intranet”.
+
+Para empezar, instalaremos el paquete de nginx:
+
+```sudo apt install nginx```
+
+![foto](Imágenes/48.png)
+
+Añadiremos el dominio "servidor2.centro.intranet" en el fichero "/etc/hosts":
+
+![foto](Imágenes/49.png)
+
+También cambiamos el puerto de escucha por defecto y ponemos el puerto 8080:
+
+![foto](Imágenes/50.png)
+
+Después de esto, instalaremos los paquetes de mysql necesarios para instalar phpmyadmin:
+
+```sudo apt-get install mysql-server mysql-client```
+
+![foto](Imágenes/51.png)
+
+Creamos la base de datos de phpmyadmin:
+
+```CREATE DATABASE phpmyadmin CHARACTER SET UTF8 COLLATE UTF8_BIN;```
+
+![foto](Imágenes/52.png)
+
+Creamos el usuario pma y le establecemos una contraseña:
+
+```CREATE USER 'pma'@'%' IDENTIFIED BY 'contraseña1234';```
+
+![foto](Imágenes/53.png)
+
+Por último, le damos todos los privilegios sobre la base de datos "phpmyadmin" al usuario recien creado:
+
+```GRANT ALL PRIVILEGES ON phpmyadmin .* TO 'pma'@'%';```
+
+![foto](Imágenes/54.png)
 
 
