@@ -380,7 +380,7 @@ Entramos al directorio "/sql" dentro del directorio de phpmyadmin e importamos l
 ```cd /downloads/phpMyAdmin-4.9.5-all-languages/sql```
 ```mysql -u pma -p phpmyadmin < create_tables.sql```
 
-### Instalación de nginx
+## Instalación de nginx
 
 Instalamos el servidor web Nginx y todos los paquetes necesarios.
 
