@@ -442,7 +442,7 @@ Utilice el siguiente comando para generar la clave aleatoria utilizada en el par
 
 ```openssl rand -base64 32```
 
-Por último editamos el fichero de configuración:
+Por último editamos el fichero de configuración donde añadiremos la clave generada, el localhost, el puerto, el usuario y la contraseña:
 
 ```vi /var/www/html/phpmyadmin/config.inc.php```
 
@@ -452,6 +452,11 @@ Por último editamos el fichero de configuración:
 
 ![foto](Imágenes/68.png)
 
+Finalmente, comprobamos en el navegador que entra correctamente en phpmyadmin a través de la ip del equipo, y del dominio que establecimos anteriormente:
+
+![foto](Imágenes/69.png)
+
+![foto](Imágenes/70.png)
 ``````
 ``````
 
