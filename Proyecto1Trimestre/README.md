@@ -408,13 +408,50 @@ Comprobamos si el archivo de nginx no tiene ningún fallo con el comando:
 
 ```nginx -t```
 
-Movemos el directorio PhpMyAdmin al directorio raíz de nginx.
+Movemos el directorio PhpMyAdmin al directorio raíz de nginx:
 
 ```mv /downloads/phpMyAdmin-4.9.5-all-languages /var/www/html/phpmyadmin```
 
 ![foto](Imágenes/62.png)
 
-``````
+Creamos los directorios necesarios:
+
+```mkdir /etc/phpmyadmin/upload -p```
+```mkdir /etc/phpmyadmin/save```
+```mkdir /etc/phpmyadmin/tmp```
+```mkdir /var/www/html/phpmyadmin/tmp```
+
+![foto](Imágenes/63.png)
+
+Establecemos los permisos correctos: 
+
+```chown www-data.www-data /var/www/html/phpmyadmin -R```
+```chown www-data.www-data /etc/phpmyadmin -R```
+```chmod 660  /etc/phpmyadmin -R```
+```chmod 777 /var/www/html/phpmyadmin/tmp -R```
+
+![foto](Imágenes/64.png)
+
+Creamos el archivo de configuración de PhpMyAdmin:
+
+```cp /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php```
+
+![foto](Imágenes/65.png)
+
+Utilice el siguiente comando para generar la clave aleatoria utilizada en el parámetro denominado: BLOWFISH_SECRET:
+
+```openssl rand -base64 32```
+
+Por último editamos el fichero de configuración:
+
+```vi /var/www/html/phpmyadmin/config.inc.php```
+
+![foto](Imágenes/66.png)
+
+![foto](Imágenes/67.png)
+
+![foto](Imágenes/68.png)
+
 ``````
 ``````
 
