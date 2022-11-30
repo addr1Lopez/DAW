@@ -367,4 +367,17 @@ Por último, le damos todos los privilegios sobre la base de datos "phpmyadmin" 
 
 ![foto](Imágenes/54.png)
 
+Una vez hecho esto, crearemos un directorio, que en este caso llamaremos "downloads", en el que descargaremos el paquete de phpmyadmin con el siguiente comando:
+
+```sudo wget https://files.phpmyadmin.net/phpmyAdmin/4.9.5/phpmyAdmin-4.9.5-all-languages.tar.gz```
+
+![foto](Imágenes/55.png)
+
+![foto](Imágenes/55.png)
+
+
+
+
+
+
 
