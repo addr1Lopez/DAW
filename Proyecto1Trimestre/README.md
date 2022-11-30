@@ -375,9 +375,46 @@ Una vez hecho esto, crearemos un directorio, que en este caso llamaremos "downlo
 
 ![foto](Imágenes/56.png)
 
+Entramos al directorio "/sql" dentro del directorio de phpmyadmin e importamos la plantilla de base de datos de PhpMyAdmin utilizando la cuenta denominada PMA
 
+```cd /downloads/phpMyAdmin-4.9.5-all-languages/sql```
+```mysql -u pma -p phpmyadmin < create_tables.sql```
 
+### Instalación de nginx
 
+Instalamos el servidor web Nginx y todos los paquetes necesarios.
 
+```apt-get install nginx apache2-utils mlocate```
 
+![foto](Imágenes/58.png)
+
+Instalamos el paquete PHP.
+
+```apt-get install php-fpm```
+
+![foto](Imágenes/59.png)
+
+Instalamos otros módulos PHP.
+
+```apt-get install php-mysql php-gd php-json php-bcmath php-xml php-mbstring php-zip php-apcu php-curl ```
+
+![foto](Imágenes/60.png)
+
+Añadimos estas líneas en el archivo /etc/nginx/sites-available/default:
+
+![foto](Imágenes/61.png)
+
+Comprobamos si el archivo de nginx no tiene ningún fallo con el comando:
+
+```nginx -t```
+
+Movemos el directorio PhpMyAdmin al directorio raíz de nginx.
+
+```mv /downloads/phpMyAdmin-4.9.5-all-languages /var/www/html/phpmyadmin```
+
+![foto](Imágenes/62.png)
+
+``````
+``````
+``````
 
