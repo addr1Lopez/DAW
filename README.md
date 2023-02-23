@@ -12,4 +12,10 @@ Este repositorio incluye actividades llevadas a cabo en el módulo DAW
 |----------|-----------|
 |[Ejercicio scripts](Tema1/Ejercicio_scripts.md)|Ejercicio scripts|
   |[Proyecto](Proyecto1Trimestre/README.md)|Proyecto Servidores Web|
+  
+## PROYECTO 2º TRIMESTRE
+
+|Ejercicios|Descripción|
+|----------|-----------|
+|[Proyecto2](Proyecto2Trimestre/README.md)|Proyecto servidor de alojamiento|
 
