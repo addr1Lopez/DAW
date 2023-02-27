@@ -1,5 +1,3 @@
-En este trimestre se elaborarán las dos prácticas que se detallan a continuación. La primera será opcional y si se supera no será necesario llevar a cabo el examen correspondiente a este segundo trimestre.
-
 # Práctica 1 - Servidor alojamiento web
 Se pide las instalación, configuración y puesta en marcha de un servidor que ofrezca servicio de alojamiento web configurable:
 
