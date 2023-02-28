@@ -81,3 +81,19 @@ Con ello, accederemos a su directorio home en la máquina linux, donde probaremo
 ![foto](img/7.png)
 
 
+## Se habilitará el acceso mediante ssh.
+
+Usaremos una aplicación externa para probar la conexión por shh, utilizaremos Mobaxterm:
+
+Crearemos una nueva sesión por SSH en el puerto 22 con la dirección IP de la máquina:
+
+![foto](img/8.png)
+
+Iniciamos sesión con alguno de los usuarios:
+
+![foto](img/9.png)
+
+Y tendremos acceso completo a la máquina:
+
+![foto](img/10.png)
+
