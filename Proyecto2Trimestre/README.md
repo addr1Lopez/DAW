@@ -138,3 +138,28 @@ Finalmente, comprobamos que podemos ejecutarlo en el localhost:
 
 ![foto](img/11.png)
 
+Por último instalamos el paquete bind9 para crear el DNS
+
+```sudo apt install -y bind9```
+
+Comprobamos que se ha instalado correctamente y está activo con el siguiente comando:
+
+```sudo systemctl status bind9```
+
+![foto](img/12.png)
+
+Configuramos los clientes de red para usar el servicio DNS Bind:
+
+```
+network:
+  ethernets:
+    enp0s3:
+      dhcp4: true
+      nameservers:
+        addresses: [10.3.5.135]
+  version: 2
+```
+
+Guardamos los cambios, cerramos el archivo y aplicamos los cambios con el siguiente comando de netplan:
+
+```sudo netplan apply```
