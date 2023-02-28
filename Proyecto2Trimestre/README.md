@@ -38,3 +38,23 @@ mysql -u root -e "CREATE USER 'usuario'@'localhost' IDENTIFIED BY '12345';GRANT 
 ``` 
 
 ![foto](img/3.png)
+
+![foto](img/4.png)
+
+## Los clientes podrán acceder mediante ftp para la administración de archivos configurando adecuadamente TLS  
+
+Para ello, tendremos que instalar el paquete vsftpd:
+
+``` sudo apt-get install vsftpd ```
+
+Editaremos su fichero de configuración:
+
+``` sudo nano /etc/vsftpd.conf ```
+
+![foto](img/5.png)
+
+![foto](img/6.png)
+
+![foto](img/7.png)
+
+
