@@ -97,3 +97,44 @@ Y tendremos acceso completo a la máquina:
 
 ![foto](img/10.png)
 
+## Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
+
+Para empezar, tenemos que instalar python en nuestro sistema:
+
+```sudo apt install python3 libexpat1 -y```
+
+Instalamos Apache y mod_wsgi:   
+
+```apt-get install apache2 apache2-utils ssl-cert libapache2-mod-wsgi -y```
+
+Después de instalarlo, crearemos un fichero de python que ejecutaremos más adelante:
+
+```sudo nano /var/www/html/wsgy.py```
+
+```
+def application(environ,start_response):
+    status = '200 OK'
+    html = '<html>\n' \
+           '<body>\n' \
+           '<div style="width: 100%; font-size: 40px; font-weight: bold; text-align: center;">\n' \
+           'Bienvenido a mi aplicacion de python\n' \
+           '</div>\n' \
+           '</body>\n' \
+           '</html>\n'
+    response_header = [('Content-type','text/html')]
+    start_response(status,response_header)
+    return [html]
+```
+
+Cambiaremos los propietarios del fichero de python para que el usuario "www-data" y el grupo "www-data" tengan acceso a él y así poder ejecutarlo en nuestro servidor web:
+
+```sudo chown www-data:www-data /var/www/html/wsgy.py```
+
+Cambiaremos también los permisos para que el usuario propietario tenga todos los permisos:
+
+```sudo chmod 775 /var/www/html/wsgy.py```
+
+Finalmente, comprobamos que podemos ejecutarlo en el localhost:
+
+![foto](img/11.png)
+
