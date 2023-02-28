@@ -14,3 +14,9 @@ Se pide las instalación, configuración y puesta en marcha de un servidor que o
     - Se creará una base de datos además de un usuario con todos los permisos sobre dicha base de datos (ALL PRIVILEGES)
     - Se habilitará la ejecución de aplicaciones Python con el servidor web 
 
+
+## Se dará alojamiento a páginas web tanto estáticas como dinámicas con “php”  
+Para ello
+
+![foto](img/1.png)
+
