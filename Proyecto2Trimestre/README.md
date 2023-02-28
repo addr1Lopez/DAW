@@ -134,6 +134,19 @@ Cambiaremos también los permisos para que el usuario propietario tenga todos lo
 
 ```sudo chmod 775 /var/www/html/wsgy.py```
 
+A continuación, crea un archivo de configuración del host virtual de Apache para servir este archivo a través del protocolo HTTP.
+
+```sudo nano /etc/apache2/conf-available/wsgi.conf```
+
+Añadimos la siguiente línea:
+
+```WSGIScriptAlias /wsgi /var/www/html/wsgy.py```
+
+Guardamos y cerramos el archivo. A continuación, activamos la configuración de mod-wsgi y reiniciamos el servicio de Apache con los siguientes comandos:
+
+```a2enconf wsgi
+systemctl restart apache2```
+
 Finalmente, comprobamos que podemos ejecutarlo en el localhost:
 
 ![foto](img/11.png)
