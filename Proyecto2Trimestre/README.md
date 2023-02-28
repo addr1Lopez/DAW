@@ -51,7 +51,30 @@ Editaremos su fichero de configuración:
 
 ``` sudo nano /etc/vsftpd.conf ```
 
+Tendríamos que descomentar la línea de write_enable=YES:
+
+![foto](img/21.png)
+
+Además, tendremos que poner las dos primeras líneas marcadas para configurar los certificados, escribir "YES" en la línea de ssl_enable y, por último, escribir las siguientes líneas para habilitar el TLS:
+
+```
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+```
+
+![foto](img/22.png)
+
+Después de esto, escribiremos el siguiente comando para generar los certificados:
+
+```sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem ```
+
+Finalmente, probaremos a entrar mediante FTP con el filezilla, lo haremos con un usuario de prueba que he creado.
+
+Para ello, escribiremos la direccion IP del servidor, el puerto 21 que es el de FTP, el usuario y la contraseña 
+
 ![foto](img/5.png)
+
+Con ello, accederemos a su directorio home en la máquina linux, donde probaremos a subir una foto para ver que la conexión funciona correctamente:
 
 ![foto](img/6.png)
 
