@@ -300,9 +300,11 @@ Y, finalmente, comprobamos que el servicio funciona correctamente:
 
 A la hora de ejecutar el script, le pasaremos como parámetro el usuario que vamos a utilizar para que tenga alojamiento web, su base de datos en phpmyadmin, se le asignen los privilegios en su base de datos, añadamos el usuario para FTP, y tenga su registro en el DNS.
 
-Lo primero que hará el script serñá comprobar que hay un usuario como parámetro para poder ejecutarse correctamente, y acto seguido creará todo lo demás:
+Lo primero que hará el script será comprobar que hay un usuario como parámetro para poder ejecutarse correctamente, y acto seguido creará todo lo demás:
 
 ```
+#!/bin/bash
+
 user=$1
 
 if [ -z "$user" ]; then
