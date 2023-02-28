@@ -144,8 +144,10 @@ Añadimos la siguiente línea:
 
 Guardamos y cerramos el archivo. A continuación, activamos la configuración de mod-wsgi y reiniciamos el servicio de Apache con los siguientes comandos:
 
-```a2enconf wsgi
-systemctl restart apache2```
+```
+a2enconf wsgi
+systemctl restart apache2
+```
 
 Finalmente, comprobamos que podemos ejecutarlo en el localhost:
 
@@ -211,3 +213,48 @@ Buscamos la directiva dnssec-validation y cambiamos su valor por "no":
 ```
 
 ### Configuración de zonas o dominios
+
+Para configurar un dominio o zona, creamos un archivo de zona para dicho dominio, normalmente utilizando el dominio como parte del nombre del archivo. En este caso vamos a crear el archivo de zona para el dominio de red local localnet.net
+
+```sudo nano /etc/bind/db.localnet.net```
+
+Escribiremos los registros de los servidores de nombres del dominio que queramos tener, crearemos, por ejemplo dns1.localnet.net, con la dirección IP de la máquina (10.3.5.135)
+
+![foto](img/13.png)
+
+Guardamos los cambios y cerramos el archivo, comprobamos que la configuración es correcta con el siguiente comando:
+
+```named-checkzone localnet.net /etc/bind/db.localnet.net```
+
+![foto](img/15.png)
+
+Para que esta configuración sea tenida en cuenta por el servicio DNS Bind será necesario incluirla desde el archivo named.conf.default-zones, así que lo editamos con el siguiente comando
+
+```sudo nano /etc/bind/named.conf.default-zones```
+
+Añadimos al final del archivo las siguientes líneas:
+
+```
+zone "localnet.net" IN {
+        type master;
+        file "/etc/bind/db.localnet.net";
+};
+```
+
+Guardamos el archivo y recargamos el servicio:
+
+```sudo systemctl reload bind9```
+
+## Probamos el servicio DNS Bind del servidor haciendo ping con el DNS
+
+![foto](img/16.png)
+
+## Configuramos la resolución inversa con el servidor DNS Bind
+
+Creamos el archivo de zona correspondiente a nuestra dirección de red:
+
+```sudo nano /etc/bind/db.5.3.10```
+
+Añadiremos los siguientes registros al final del fichero:
+
+![foto](img/14.png)
