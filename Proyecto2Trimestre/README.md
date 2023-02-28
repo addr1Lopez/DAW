@@ -16,7 +16,25 @@ Se pide las instalación, configuración y puesta en marcha de un servidor que o
 
 
 ## Se dará alojamiento a páginas web tanto estáticas como dinámicas con “php”  
-Para ello
+Para ello crearemos un fichero llamado index.php, que contendrá contenido en php que se podrá visualizar.
+Este fichero tendrá que estar en un directorio personal que hayamos creado en la ruta "/var/www/html/", que es donde se almacenarán los ficheros html alojados para el localhost.
 
 ![foto](img/1.png)
 
+## Los clientes dispondrán de un directorio de usuario con una página web por defecto. 
+Daremos un alojamiento web a los usuarios que vayamos creando, como por ejemplo, el que yo he creado, el usuario "dnsadri".
+
+![foto](img/2.png)
+
+## Además contarán con una base de datos sql que podrán administrar con phpmyadmin
+Con los siguientes comando que serán usados más tarde en el script que automatizará todo, podremos crear una base de datos en MySQL con privilegios en ella para los usuarios que creemos:
+
+``` 
+mysql -u root -e "CREATE DATABASE usuario;"
+
+mysql -u root -e "USE usuario;"
+
+mysql -u root -e "CREATE USER 'usuario'@'localhost' IDENTIFIED BY '12345';GRANT ALL PRIVILEGES ON usuario.* TO 'usuario'@'localhost';"
+``` 
+
+![foto](img/3.png)
