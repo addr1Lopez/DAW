@@ -138,7 +138,9 @@ Finalmente, comprobamos que podemos ejecutarlo en el localhost:
 
 ![foto](img/11.png)
 
-Por último instalamos el paquete bind9 para crear el DNS
+
+## Instalación y configuración de DNS
+Instalamos el paquete bind9 para crear el DNS
 
 ```sudo apt install -y bind9```
 
@@ -163,3 +165,36 @@ network:
 Guardamos los cambios, cerramos el archivo y aplicamos los cambios con el siguiente comando de netplan:
 
 ```sudo netplan apply```
+
+Editamos el fichero /etc/default/named
+
+```sudo nano /etc/default/named```
+
+Y le añadimos el parámetro -4 a la siguiente línea:
+
+```OPTIONS="-u bind -4"```
+
+Reiniciamos el servicio:
+
+```sudo systemctl reload bind9```
+
+## Si trabajamos con un servidor DNS local, como el de este ejemplo, no funcionará la capa de seguridad DNSSEC, así que debemos desactivarla. Para ello editamos el archivo named.conf.options:
+
+```sudo nano /etc/bind/named.conf.options```
+
+Buscamos la directiva dnssec-validation y cambiamos su valor por "no":
+
+```dnssec-validation no;```
+
+## Editamos el archivo named.conf.options para la resolución de nombres de Internet (forwarding)
+
+```sudo nano /etc/bind/named.conf.options```
+
+```      
+        forwarders {
+                8.8.8.8;
+                8.8.4.4;
+        };
+```
+
+### Configuración de zonas o dominios
