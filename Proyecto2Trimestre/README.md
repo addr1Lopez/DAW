@@ -255,6 +255,45 @@ Creamos el archivo de zona correspondiente a nuestra dirección de red:
 
 ```sudo nano /etc/bind/db.5.3.10```
 
-Añadiremos los siguientes registros al final del fichero:
+Añadiremos los registros DNS al final del fichero:
 
 ![foto](img/14.png)
+
+Guardamos los cambios y comprobamos la corrección del archivo con named-checkzone:
+
+![foto](img/17.png)
+
+Si todo es correcto editaremos de nuevo named.conf.default-zones:
+
+```sudo nano /etc/bind/named.conf.default-zones```
+
+Y añadimos el siguiente bloque zone para incluir la configuración del archivo de resolución inversa:
+
+```
+zone "5.3.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.5.3.10";
+};
+```
+
+Recargamos la configuración del servicio DNS:
+
+```sudo systemctl reload bind9```
+
+Comprobamos el estado del servicio de bind9:
+
+```sudo systemctl status bind9```
+
+![foto](img/18.png)
+
+Comprobamos desde el propio servidor Ubuntu donde tenemos el servicio DNS Bind con el comando nsloo
+
+```nslookup 10.3.5.135 localhost```
+
+![foto](img/19.png)
+
+Y, finalmente, comprobamos que el servicio funciona correctamente:
+
+![foto](img/20.png)
+
+
