@@ -220,6 +220,8 @@ Ejecutamos el programa docker-compose desde el directorio de la aplicación
 ![foto](img/44.png)
 
 
+
+
 ## Ejemplo 3: Despliegue de Wordpress + mariadb
 
 Para la ejecución de wordpress el fichero docker-compose.yml tendrá el siguiente contenido:
@@ -227,12 +229,11 @@ Para la ejecución de wordpress el fichero docker-compose.yml tendrá el siguien
 ![foto](img/45.png)
 
 
+Ejecutamos el programa docker-compose desde el directorio de la aplicación
 
-
-
-
-
-
-![foto](img/45.png)
 ![foto](img/46.png)
+
+
+-  Aplicación Wordpress funcionando:
+
 ![foto](img/47.png)
