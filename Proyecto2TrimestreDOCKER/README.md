@@ -174,15 +174,65 @@ Siguiendo la documentación de la imagen mariadb y la imagen wordpress podemos e
 
 
 
+# Práctica 5
+
+Instalamos el paquete docker-compose:
+
+```apt install docker-compose```
 
 ![foto](img/37.png)
+
+
+## Ejemplo 1: Despliegue de la aplicación Guestbook
+
+En el fichero docker-compose.yml vamos a definir el escenario. 
+
+Creamos un directorio para la aplicación guestbook en "/home/usuario/Escritorio/guestbook", y ahí creamos el fichero docker-compose.yml y añadimos las siguientes líneas:
+
 ![foto](img/38.png)
+
+
+El programa docker-compose se debe ejecutar en el directorio donde este ese fichero.
+
 ![foto](img/39.png)
+
+-  Aplicación Guestbook funcionando:
+
 ![foto](img/40.png)
+
+
+
+## Ejemplo 2: Despliegue de la aplicación Temperaturas
+
+En este caso el fichero docker-compose.yml estará en la ruta "/home/usuario/Escritorio/temperaturas" y tendrá esta forma:
+
 ![foto](img/41.png)
+
+Ejecutamos el programa docker-compose desde el directorio de la aplicación
+
 ![foto](img/42.png)
+
 ![foto](img/43.png)
+
+
+-  Aplicación Temperaturas funcionando:
+
 ![foto](img/44.png)
+
+
+## Ejemplo 3: Despliegue de Wordpress + mariadb
+
+Para la ejecución de wordpress el fichero docker-compose.yml tendrá el siguiente contenido:
+
+![foto](img/45.png)
+
+
+
+
+
+
+
+
 ![foto](img/45.png)
 ![foto](img/46.png)
 ![foto](img/47.png)
